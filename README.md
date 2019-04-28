@@ -1,2 +1,2 @@
 # leecode
-js算法联系
+js算法练习

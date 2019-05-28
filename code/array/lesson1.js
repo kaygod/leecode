@@ -16,7 +16,7 @@ function dataMap (m) {
     case "8":
       return "wxyz"
     default:
-      return ""  
+      return ""
   }
 }
 
@@ -33,8 +33,8 @@ function dataHandler (arr) {
 function circle (arr) {
   let result = dataHandler(arr)
   arr.splice(0, 2, result)
-  if (arr.length > 0) {
-    circle(arr)   
+  if (arr.length > 1) {
+    return circle(arr)
   } else {
     return result
   }
@@ -44,7 +44,7 @@ export default (str) => {
   let arr
   arr = str.split("")
   arr.map((v, i) => {
-    arr[i] = dataMap(v)    
+    arr[i] = dataMap(v)
   })
-  circle(arr)
+  return circle(arr)
 }
